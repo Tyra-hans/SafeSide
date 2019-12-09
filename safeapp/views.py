@@ -32,7 +32,7 @@ def home(request):
         if list_of_data2['alerts']['alerts'] == []:
             data2 = {
                 "city": str(list_of_data2['alerts']['city']),
-                "alerts": str(list_of_data2['alerts']['alerts'])
+                "alerts": "Weather is not extreem in " + city
 
             }
         # print(list_of_data2)
