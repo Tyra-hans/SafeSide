@@ -17,12 +17,12 @@
 </head>
 
 <body>
-  <nav class="row" style="background: green; color: white;">
+  <nav class="row" style="background: skyblue; color: white;">
     <h1 class="col-md-3 text-center">weather</h1>
   </nav>
   <br />
   <br />
-  <center class="row">
+  <center class="row bg-img">
     <form method="post" class="col-md-6 col-md-offset-3">
       {% csrf_token %}
       <div class="input-group">
@@ -44,13 +44,16 @@
         <h5>pressure : {{data.pressure}} </h5>
         <h5>humidity : {{data.humidity}}</h5>
     </div>
+   
     {% endif %}
     
-        
+    {% if data2.city and data2.alerts %}
+
     <div class="col-md-6 col-md-offset-3">
-      <h3>city : {{data2.city}}</h1>
+      <h5>city : {{data2.city}}</h5>
         <h5>alerts : {{data2.alerts}}</h5>
-       
+        {% endif %}
+
     </div>
     
   </div>
