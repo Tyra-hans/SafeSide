@@ -32,4 +32,4 @@ def home(request):
         data ={} 
 
 
-    return render(request,'weather/home.html')
+    return render(request,'weather/home.html',{'data':data})
