@@ -33,26 +33,23 @@ def home(request):
             print('error occured')
 
         finally:
-            print('Dummy data resp')
+            return redirect('error')
         # Validation for weather alerts :
         if list_of_data2['alerts']['alerts'] == []:
             data2 = {
                 "city": str(list_of_data2['alerts']['city']),
                 "alerts": "Weather is not extreem in " + city
-
             }
-    
         else:
             data2 = {
                 "city": str(list_of_data2['alerts']['city']),
                 "alerts": str(list_of_data2['alerts']['alerts'][0]['description'] + '. Stay safe')
-
             }
     else:
         data={}
         data2={}
 
-
     return render(request,'weather/home.html',{'data':data, 'data2' :data2})
 
-
+def error(request):
+    return render(request,'weather/500.html')

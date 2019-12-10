@@ -5,4 +5,5 @@ from django.conf import settings
 
 urlpatterns=[
    url('^$', views.home, name='home'),
+   url('^error/$', views.error, name='error'),
 ]
